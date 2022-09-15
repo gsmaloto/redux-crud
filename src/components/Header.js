@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const userLogged = useSelector((state) => state.auth);
   return (
     <header className="sticky top-0 text-white bg-blue-700">
       <div className="container flex items-center justify-between px-2 py-4 mx-auto">
@@ -9,7 +11,7 @@ const Header = () => {
         </h1>
         <div className="flex gap-2">
           <a href="#" className="overflow-ellipsis">
-            email@email.com
+            {userLogged.email}
           </a>
           <img
             src="https://cdn.mos.cms.futurecdn.net/FvLi2evhiuCYNdZ7HALQu3-1200-80.jpeg"
